@@ -6,8 +6,8 @@ export default function Contact({ timestamp, duration}) {
 	const date = new Date(timestamp).toLocaleString();
 
 	return (
-		<Typography gutterBottom variant="alignLeft" component="span">
-            date: {date}  duration: {duration} sec.
+		<Typography gutterBottom align="left" component="span">
+      date: {date}  duration: {duration} sec.
 		</Typography>
 	);
 }

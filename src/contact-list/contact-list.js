@@ -1,7 +1,6 @@
 import React from 'react';
 import ContactListItem from './contact-list-item';
 import Grid from '@material-ui/core/Grid';
-import './contact-list.css';
 
 
 export default function ContactList({ contacts, deleteContact }) {

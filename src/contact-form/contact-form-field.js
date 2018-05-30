@@ -8,7 +8,7 @@ export default function ContactFormField({
 	input, label, type, meta: { touched, error },
 }) {
 	return (
-		<FormControl className="contact-form-field" error={touched && error} aria-describedby="name-error-text">
+		<FormControl className="contact-form-field" error={!!(touched && error)} aria-describedby="name-error-text">
 			<InputLabel htmlFor="name-error">{label}</InputLabel>
 			<Input {...input} placeholder={label} type={type} />
 			{touched && error && <FormHelperText id="name-error-text">{error.message}</FormHelperText>}

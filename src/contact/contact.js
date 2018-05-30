@@ -17,19 +17,19 @@ export default function Contact(props) {
 				<Typography gutterBottom variant="headline" component="h2">
                     Name: {contact.firstName} {contact.lastName}
 				</Typography>
-				<Typography gutterBottom variant="headline" component="h3">
+				<Typography gutterBottom variant="subheading" component="h3">
                     Phone: {contact.phone}
 				</Typography>
-				<Typography gutterBottom variant="headline" component="h3">
+				<Typography gutterBottom variant="subheading" component="h3">
                     Email: {contact.email}
 				</Typography>
 				{
 					contact.calls &&
                     <div>
-                    	<Typography gutterBottom variant="headline" component="h2">
-                            Calls
+                    	<Typography gutterBottom variant="body2" component="h2">
+                            Calls:
                     	</Typography>
-                    	{contact.calls.map(call => <Call {...call} />)}
+                    	{contact.calls.map(call => <Call key={call.timestamp} {...call} />)}
                     </div>
 				}
 

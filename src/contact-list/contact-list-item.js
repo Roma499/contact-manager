@@ -23,7 +23,7 @@ export default function ContactListItem(props) {
 			</CardContent>
 			<CardActions>
 				<Button size="small" color="primary">
-					<Link to={`/contacts/${contact.id}`} className="ui basic button green">Show more</Link>
+					<Link to={`/contacts/${contact.id}`} >Show more</Link>
 				</Button>
 				<Button size="small" color="secondary" onClick={() => deleteContact(contact.id)}>
                         Delete
