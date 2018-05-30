@@ -5759,7 +5759,7 @@ react-dev-utils@^5.0.1:
     react-error-overlay "^4.0.0"
     recursive-readdir "2.2.1"
     shell-quote "1.6.1"
-    sockjs-client "1.1.4"
+    sockjs-http "1.1.4"
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
@@ -6482,7 +6482,7 @@ snapdragon@^0.8.1:
 
 sockjs-client@1.1.4:
   version "1.1.4"
-  resolved "https://registry.yarnpkg.com/sockjs-client/-/sockjs-client-1.1.4.tgz#5babe386b775e4cf14e7520911452654016c8b12"
+  resolved "https://registry.yarnpkg.com/sockjs-http/-/sockjs-http-1.1.4.tgz#5babe386b775e4cf14e7520911452654016c8b12"
   dependencies:
     debug "^2.6.6"
     eventsource "0.1.6"
@@ -7253,7 +7253,7 @@ webpack-dev-server@2.9.4:
     selfsigned "^1.9.1"
     serve-index "^1.7.2"
     sockjs "0.3.18"
-    sockjs-client "1.1.4"
+    sockjs-http "1.1.4"
     spdy "^3.4.1"
     strip-ansi "^3.0.1"
     supports-color "^4.2.1"
