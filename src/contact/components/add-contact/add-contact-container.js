@@ -1,36 +1,40 @@
 import React, { Component} from 'react';
 import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
-import { createContact, saveContact } from '../../contact-actions';
-import ContactForm from '../contact-form/contact-form';
+import PropTypes from 'prop-types';
 
+import { saveContact } from '../../contact.actions';
+import ContactForm from '../contact-form/contact-form';
+import { contactPropType } from '../../contact.type';
+
+const propTypes = {
+  contact: contactPropType,
+  errors: PropTypes.object,
+  saveContact: PropTypes.func.isRequired,
+};
 
 class AddContactContainer extends Component {
 
-		componentDidMount() {
-				this.props.createContact();
-		};
-
 		submit = (contact) => {
-
-            return this.props.saveContact(contact)
-                .then(response => this.props.history.goBack())
-                .catch(err => {
-                        throw new SubmissionError(this.props.errors)
-                })
-
+      
+      return this.props.saveContact(contact)
+        .catch(err => {
+          throw new SubmissionError(this.props.errors)
+        })
 		};
 
 		render() {
-				return <ContactForm contact={this.props.contact} onSubmit={this.submit} />
+      return <ContactForm onSubmit={this.submit} />
 		}
 }
 
 function mapStateToProps(state) {
 		return {
-				contact: state.contactStore.contact,
-				errors: state.contactStore.errors
+      contact: state.contactStore.contact,
+      errors: state.contactStore.errors
 		}
 }
 
-export default connect(mapStateToProps, {createContact, saveContact})(AddContactContainer);
+AddContactContainer.propTypes = propTypes;
+
+export default connect(mapStateToProps, { saveContact })(AddContactContainer);

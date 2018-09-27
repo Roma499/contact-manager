@@ -1,9 +1,16 @@
 import React from 'react';
-import ContactListItem from './contact-list-item';
+import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
+import ContactListItem from './contact-list-item';
+import { contactPropType } from '../../contact.type';
 
-export default function ContactList({ contacts, deleteContact }) {
+const propTypes = {
+  contacts: PropTypes.arrayOf(contactPropType),
+  deleteContact: PropTypes.func.isRequired,
+};
+
+function ContactList({ contacts, deleteContact }) {
 	return (
 		<div>
 			<Grid container direction="column" justify="center" spacing={8}>
@@ -14,9 +21,11 @@ export default function ContactList({ contacts, deleteContact }) {
 						</Grid>
 					))
 				}
-
 			</Grid>
 		</div>
 	);
 }
 
+ContactList.propTypes = propTypes
+
+export default ContactList

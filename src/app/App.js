@@ -8,7 +8,9 @@ import ContactListContainer from '../contact/components/contact-list/contact-lis
 import ContactContainer from '../contact/components/contact/contact-container';
 import AddContactContainer from '../contact/components/add-contact/add-contact-container';
 import EditContactContainer from '../contact/components/edit-contact/edit-contact-container';
+import NoMatch from '../no-match/no-match';
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -39,6 +41,7 @@ class App extends Component {
           <Route path="/contacts/new" component={AddContactContainer} />
           <Route path="/contacts/edit/:id" component={EditContactContainer} />
           <Route path="/contacts/:id" component={ContactContainer} />
+          <Route component={NoMatch} />
         </Switch>
       </div>
     );

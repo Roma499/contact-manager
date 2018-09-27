@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+
 import ContactFormField from './contact-form-field'
 import { validators, validateForm } from '../../../utils/validator';
+import { contactPropType } from '../../contact.type';
 
 const messages = {
   requaired: 'required',
@@ -47,11 +50,18 @@ const fields = {
 
 const validate = values => validateForm(fields, values);
 
+const propTypes = {
+  contact: contactPropType,
+  pristine: PropTypes.bool.isRequired,
+  submitting: PropTypes.bool.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
+
 class ContactForm extends Component {
-  componentWillReceiveProps(nextProps) {
-    const { contact } = nextProps;
-    if (contact.id !== this.props.contact.id) {
-      this.props.initialize(contact);
+  constructor(props) {
+    super(props);
+    if (props.contact) {
+      props.initialize(props.contact);
     }
   }
 
@@ -61,7 +71,7 @@ class ContactForm extends Component {
       <Card className="contact-list-item">
         <CardContent>
           <Typography gutterBottom variant="headline" component="h3">
-            {contact.id ? 'Edit Contact' : 'Add New Contact'}
+            {contact ? 'Edit Contact' : 'Add New Contact'}
           </Typography>
         </CardContent>
         <form onSubmit={handleSubmit}>
@@ -82,5 +92,7 @@ class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = propTypes;
 
 export default reduxForm({ form: 'contact', validate })(ContactForm);

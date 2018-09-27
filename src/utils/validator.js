@@ -27,9 +27,7 @@ export const validateForm = (fields, values) => {
   return Object.keys(fields).reduce((acc, key, index) => {
     const errorMessage = fields[key] ? validateField(values[key], fields[key]) : null
     if (errorMessage) {
-      acc[key] = {
-        message: errorMessage
-      }
+      acc[key] = errorMessage
     }
     return acc
   }, {})

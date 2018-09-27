@@ -1,6 +1,6 @@
 const defaultState = {
 	contacts: [],
-	contact: { name: {} },
+	contact: null,
 	loading: false,
 	errors: {},
 };
@@ -29,13 +29,6 @@ export default (state = defaultState, action = {}) => {
 			...state,
 			loading: false,
 			errors: { message: action.payload.message },
-		};
-	}
-
-	case 'CREATE_CONTACT': {
-		return {
-			...state,
-			contact: { name: {} },
 		};
 	}
 
@@ -70,7 +63,7 @@ export default (state = defaultState, action = {}) => {
 		return {
 			...state,
 			loading: true,
-			contact: { name: {} },
+			contact: null,
 		};
 	}
 

@@ -1,45 +1,33 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router";
-import { connect } from "react-redux";
-import { deleteContact, fetchContact } from "../../contact-actions";
-import Contact from "./contact";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { deleteContact, fetchContact } from '../../contact.actions';
+import { contactPropType } from '../../contact.type';
+import Contact from './contact';
+
+const propTypes = {
+    contact: contactPropType,
+    fetchContact: PropTypes.func.isRequired,
+    deleteContact: PropTypes.func.isRequired,
+};
 
 class ContactContainer extends Component {
   constructor(props) {
     super(props);
-    this.deleteContact = this.deleteContact.bind(this);
-    this.state = {
-      redirect: false
-    };
+    const { id } = props.match.params;
+    props.fetchContact(id)
   }
-
-  componentDidMount() {
-    const { id } = this.props.match.params;
-    if (id) {
-      this.props.fetchContact(id);
-    } else {
-      this.setState({ redirect: true });
-    }
-  };
 
   render() {
     return (
-      <div>
-        {this.state.redirect ? (
-          <Redirect to="/" />
-        ) : (
-          <Contact
-            contact={this.props.contact}
-            deleteContact={this.deleteContact}
-          />
-        )}
-      </div>
+      this.props.contact && (
+        <Contact
+          contact={this.props.contact}
+          deleteContact={this.props.deleteContact}
+        />
+      ) 
     );
-  }
-
-  deleteContact(id) {
-    this.props.deleteContact(id);
-    this.setState({ redirect: true });
   }
 }
 
@@ -49,7 +37,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchContact, deleteContact }
-)(ContactContainer);
+ContactContainer.propTypes = propTypes;
+
+export default connect(mapStateToProps, { fetchContact, deleteContact })(ContactContainer);

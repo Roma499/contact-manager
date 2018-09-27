@@ -1,9 +1,16 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux'
+import { connectRouter, routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducer';
+import history from './history'
 
-const middleware = composeWithDevTools(applyMiddleware(promise(), thunk));
+const middlewares = composeWithDevTools(applyMiddleware(routerMiddleware(history), promise(), thunk));
 
-export default createStore(rootReducer, middleware);
+const store = createStore(
+  connectRouter(history)(rootReducer),
+  compose(middlewares),
+)
+
+export default store;

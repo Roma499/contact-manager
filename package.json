@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.1.0",
     "axios": "^0.18.0",
+    "connected-react-router": "^4.5.0",
     "form": "^0.2.4",
     "history": "^4.7.2",
     "react": "^16.4.0",
@@ -23,12 +24,18 @@
     "start": "npm run server | react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject",
     "server": "json-server ./server/db-1527707955987.json --port 4000"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.15.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "faker": "^4.1.0",
     "json-server": "^0.12.2",
-    "redux-devtools-extension": "^2.13.5"
+    "react-test-renderer": "^16.5.2",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-mock-store": "^1.5.3"
   }
 }

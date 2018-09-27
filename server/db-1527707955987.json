@@ -1,22 +1,9 @@
 {
   "contacts": [
     {
-      "id": 5,
-      "firstName": "Amiya",
-      "lastName": "Ondrickadsss",
-      "email": "Weldon_Ferry@yahoo.com",
-      "phone": "032-079-4444",
-      "calls": [
-        {
-          "duration": 190,
-          "timestamp": "2018-05-30T15:04:56.071Z"
-        }
-      ]
-    },
-    {
       "id": 6,
       "firstName": "Pablo",
-      "lastName": "Wisoky",
+      "lastName": "Wisokysad",
       "email": "Frank.Stehr@hotmail.com",
       "phone": "686-500-9586",
       "calls": [
@@ -27,27 +14,6 @@
         {
           "duration": 47,
           "timestamp": "2018-05-30T18:05:10.514Z"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "firstName": "Cesar",
-      "lastName": "Ratke",
-      "email": "Lance.Kihn0@gmail.com",
-      "phone": "622-377-8507",
-      "calls": [
-        {
-          "duration": 25,
-          "timestamp": "2018-05-30T18:38:21.314Z"
-        },
-        {
-          "duration": 109,
-          "timestamp": "2018-05-30T19:02:21.769Z"
-        },
-        {
-          "duration": 136,
-          "timestamp": "2018-05-29T22:07:35.130Z"
         }
       ]
     },
@@ -563,7 +529,7 @@
     {
       "id": 46,
       "firstName": "Tania",
-      "lastName": "Mayert",
+      "lastName": "Mayert3",
       "email": "Laurie.Greenfelder@hotmail.com",
       "phone": "861-599-2665",
       "calls": [
@@ -630,19 +596,53 @@
       "id": 50
     },
     {
-      "lastName": "sdfs",
-      "id": 52
+      "firstName": "wwafd",
+      "lastName": "wadadw",
+      "phone": "745-139-4032",
+      "email": "Virginia58@hotmail.com",
+      "id": 55
     },
     {
-      "firstName": "xfdf",
-      "lastName": "dsfgsf",
-      "id": 53
+      "firstName": "wdqa",
+      "lastName": "afafsa",
+      "phone": "745-139-4032",
+      "email": "Virginia58@hotmail.com",
+      "id": 56
     },
     {
-      "firstName": "AD",
-      "phone": "33333333333",
-      "email": "fdhgdhg@grdg.serw",
-      "id": 54
+      "firstName": "sada",
+      "lastName": "sadas",
+      "phone": "745-139-4032",
+      "email": "Virginia58@hotmail.com",
+      "id": 58
+    },
+    {
+      "firstName": "Else",
+      "lastName": "Wardq",
+      "phone": "745-139-4032",
+      "email": "Virginia58@hotmail.com",
+      "id": 59
+    },
+    {
+      "firstName": "sawwda",
+      "lastName": "wada",
+      "email": "Virginia58@hotmail.com",
+      "phone": "745-139-4032",
+      "id": 60
+    },
+    {
+      "firstName": "sadsadsad",
+      "lastName": "sdsadasd",
+      "email": "Virginia58@hotmail.com",
+      "phone": "745-139-4032",
+      "id": 61
+    },
+    {
+      "firstName": "Else",
+      "lastName": "ыфвыф",
+      "phone": "745-139-4032",
+      "email": "Weldon_Ferry@yahoo.com",
+      "id": 62
     }
   ]
 }
