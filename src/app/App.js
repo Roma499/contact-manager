@@ -4,10 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import ContactListContainer from '../contact-list/contact-list-container';
-import ContactContainer from '../contact/contact-container';
-import AddContactContainer from '../add-contact/add-contact-container';
-import EditContactContainer from '../edit-contact/edit-contact-container';
+import ContactListContainer from '../contact/components/contact-list/contact-list-container';
+import ContactContainer from '../contact/components/contact/contact-container';
+import AddContactContainer from '../contact/components/add-contact/add-contact-container';
+import EditContactContainer from '../contact/components/edit-contact/edit-contact-container';
 import './App.css';
 
 class App extends Component {

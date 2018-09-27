@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
-import { fetchContact, updateContact } from '../actions/contact-actions';
+import { fetchContact, updateContact } from '../../contact-actions';
 import ContactForm from '../contact-form/contact-form';
 
 

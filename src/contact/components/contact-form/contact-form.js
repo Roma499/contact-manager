@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ContactFormField from './contact-form-field'
-import { validators, validateForm } from '../utils/validator';
+import { validators, validateForm } from '../../../utils/validator';
 
 const messages = {
   requaired: 'required',
