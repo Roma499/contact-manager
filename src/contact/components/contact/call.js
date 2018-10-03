@@ -4,19 +4,19 @@ import Typography from '@material-ui/core/Typography';
 
 const propTypes = {
   timestamp: PropTypes.string.isRequired,
-  duration: PropTypes.number.isRequired,
+  duration: PropTypes.number.isRequired
 };
 
-function Contact({ timestamp, duration}) {
-	const date = new Date(timestamp).toLocaleString();
+function Contact({ timestamp, duration }) {
+  const date = new Date(timestamp).toLocaleString();
 
-	return (
-		<Typography gutterBottom align="left" component="span">
-      date: {date}  duration: {duration} sec.
-		</Typography>
-	);
+  return (
+    <Typography gutterBottom align="left" component="span">
+      date: {date} duration: {duration} sec.
+    </Typography>
+  );
 }
 
-Contact.propTypes = propTypes
+Contact.propTypes = propTypes;
 
-export default Contact
+export default Contact;

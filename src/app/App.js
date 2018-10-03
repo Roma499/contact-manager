@@ -11,7 +11,6 @@ import EditContactContainer from '../contact/components/edit-contact/edit-contac
 import NoMatch from '../no-match/no-match';
 import './App.css';
 
-
 class App extends Component {
   render() {
     return (

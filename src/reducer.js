@@ -3,8 +3,8 @@ import ContactReducer from './contact/contact.reducer';
 import { reducer as formReducer } from 'redux-form';
 
 const reducers = {
-	contactStore: ContactReducer,
-	form: formReducer,
+  contactStore: ContactReducer,
+  form: formReducer
 };
 
 const rootReducer = combineReducers(reducers);

@@ -7,29 +7,32 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import ContactFormField from './contact-form-field'
+import ContactFormField from './contact-form-field';
 import { validators, validateForm } from '../../../utils/validator';
 import { contactPropType } from '../../contact.type';
 
 const messages = {
   requaired: 'required',
   phone: 'Invalid phone',
-  email: 'Invalid email',
-
-}
+  email: 'Invalid email'
+};
 const fields = {
-  firstName: [{
-    validator: validators.requaired,
-    message: messages.requaired
-  }],
-  lastName: [{
-    validator: validators.requaired,
-    message: messages.requaired
-  }],
+  firstName: [
+    {
+      validator: validators.requaired,
+      message: messages.requaired
+    }
+  ],
+  lastName: [
+    {
+      validator: validators.requaired,
+      message: messages.requaired
+    }
+  ],
   phone: [
     {
-    validator: validators.requaired,
-    message: messages.requaired,
+      validator: validators.requaired,
+      message: messages.requaired
     },
     {
       validator: validators.phone,
@@ -39,14 +42,14 @@ const fields = {
   email: [
     {
       validator: validators.requaired,
-      message: messages.requaired,
+      message: messages.requaired
     },
     {
       validator: validators.email,
       message: messages.email
     }
-  ],
-} 
+  ]
+};
 
 const validate = values => validateForm(fields, values);
 
@@ -54,7 +57,7 @@ const propTypes = {
   contact: contactPropType,
   pristine: PropTypes.bool.isRequired,
   submitting: PropTypes.bool.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
 
 class ContactForm extends Component {

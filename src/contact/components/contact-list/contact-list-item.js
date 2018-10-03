@@ -11,33 +11,30 @@ import './contact-list-item.css';
 import { contactPropType } from '../../contact.type';
 
 const propTypes = {
-	contact: contactPropType.isRequired,
-	deleteContact: PropTypes.func.isRequired,
+  contact: contactPropType.isRequired,
+  deleteContact: PropTypes.func.isRequired
 };
 
-
 function ContactListItem({ contact, deleteContact }) {
-	return (
-		<Card className="contact-list-item">
-
-			<CardContent>
-				<Typography gutterBottom variant="headline" component="h3">
-					{contact.firstName} {contact.lastName}
-				</Typography>
-
-			</CardContent>
-			<CardActions>
-				<Button size="small" color="primary">
-					<Link to={`/contacts/${contact.id}`} >Show more</Link>
-				</Button>
-				<Button size="small" color="secondary" onClick={() => deleteContact(contact.id)}>
+  return (
+    <Card className="contact-list-item">
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h3">
+          {contact.firstName} {contact.lastName}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" color="primary">
+          <Link to={`/contacts/${contact.id}`}>Show more</Link>
+        </Button>
+        <Button size="small" color="secondary" onClick={() => deleteContact(contact.id)}>
           Delete
-				</Button>
-			</CardActions>
-		</Card>
-	);
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
 
 ContactListItem.propTypes = propTypes;
 
-export default ContactListItem
+export default ContactListItem;

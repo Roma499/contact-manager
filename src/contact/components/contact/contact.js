@@ -12,46 +12,46 @@ import { contactPropType } from '../../contact.type';
 
 const propTypes = {
   contact: contactPropType,
-  deleteContact: PropTypes.func.isRequired,
+  deleteContact: PropTypes.func.isRequired
 };
 
 function Contact(props) {
-	const { contact, deleteContact } = props;
-	return (
-		<Card >
-			<CardContent>
-				<Typography gutterBottom variant="headline" component="h2">
+  const { contact, deleteContact } = props;
+  return (
+    <Card>
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h2">
           Name: {contact.firstName} {contact.lastName}
-				</Typography>
-				<Typography gutterBottom variant="subheading" component="h3">
+        </Typography>
+        <Typography gutterBottom variant="subheading" component="h3">
           Phone: {contact.phone}
-				</Typography>
-				<Typography gutterBottom variant="subheading" component="h3">
+        </Typography>
+        <Typography gutterBottom variant="subheading" component="h3">
           Email: {contact.email}
-				</Typography>
-				{
-					contact.calls &&
-            <div>
-              <Typography gutterBottom variant="body2" component="h2">
-                Calls:
-              </Typography>
-              {contact.calls.map(call => <Call key={call.timestamp} {...call} />)}
-            </div>
-				}
-
-			</CardContent>
-			<CardActions>
-				<Button size="small" color="primary">
-					<Link to={`/contacts/edit/${contact.id}`}>Edit</Link>
-				</Button>
-				<Button size="small" color="secondary" onClick={() => deleteContact(contact.id)}>
+        </Typography>
+        {contact.calls && (
+          <div>
+            <Typography gutterBottom variant="body2" component="h2">
+              Calls:
+            </Typography>
+            {contact.calls.map(call => (
+              <Call key={call.timestamp} {...call} />
+            ))}
+          </div>
+        )}
+      </CardContent>
+      <CardActions>
+        <Button size="small" color="primary">
+          <Link to={`/contacts/edit/${contact.id}`}>Edit</Link>
+        </Button>
+        <Button size="small" color="secondary" onClick={() => deleteContact(contact.id)}>
           Delete
-				</Button>
-			</CardActions>
-		</Card>
-	);
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
 
-Contact.propTypes = propTypes
+Contact.propTypes = propTypes;
 
-export default Contact
+export default Contact;
