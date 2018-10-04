@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { SubmissionError } from 'redux-form';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { fetchContact, updateContact } from '../../contact.actions';
+import { fetchContact, updateContact } from '../../actions';
 import ContactForm from '../contact-form/contact-form';
 import { contactPropType } from '../../contact.type';
 
 const propTypes = {
   contact: contactPropType,
-  errors: PropTypes.object,
   fetchContact: PropTypes.func.isRequired,
   updateContact: PropTypes.func.isRequired
 };
@@ -21,23 +19,18 @@ class EditContactContainer extends Component {
     props.fetchContact(id);
   }
 
-  submit = contact => {
-    return this.props.updateContact(contact).catch(err => {
-      throw new SubmissionError(this.props.errors);
-    });
-  };
-
   render() {
     return (
-      this.props.contact && <ContactForm contact={this.props.contact} onSubmit={this.submit} />
+      this.props.contact && (
+        <ContactForm contact={this.props.contact} onSubmit={this.props.updateContact} />
+      )
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    contact: state.contactStore.contact,
-    errors: state.contactStore.errors
+    contact: state.contactStore.contact
   };
 }
 

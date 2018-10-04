@@ -1,23 +1,6 @@
 {
   "contacts": [
     {
-      "id": 6,
-      "firstName": "Pablo",
-      "lastName": "Wisokysad",
-      "email": "Frank.Stehr@hotmail.com",
-      "phone": "686-500-9586",
-      "calls": [
-        {
-          "duration": 39,
-          "timestamp": "2018-05-30T02:02:18.509Z"
-        },
-        {
-          "duration": 47,
-          "timestamp": "2018-05-30T18:05:10.514Z"
-        }
-      ]
-    },
-    {
       "id": 10,
       "firstName": "Jena",
       "lastName": "Douglas",
@@ -664,20 +647,6 @@
       "phone": "032-079-4444",
       "email": "Virginia58@hotmail.com",
       "id": 65
-    },
-    {
-      "firstName": "sada",
-      "lastName": "daasd",
-      "phone": "745-139-4032",
-      "email": "Weldon_Ferry@yahoo.com",
-      "id": 66
-    },
-    {
-      "firstName": "Else",
-      "lastName": "daasd",
-      "phone": "745-139-4032",
-      "email": "Virginia58@hotmail.com",
-      "id": 67
     }
   ]
 }

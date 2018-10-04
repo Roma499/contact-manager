@@ -7,19 +7,19 @@ const defaultState = {
 
 export default (state = defaultState, action = {}) => {
   switch (action.type) {
+    case 'FETCH_CONTACTS': {
+      return {
+        ...state,
+        loading: true,
+        errors: {}
+      };
+    }
+
     case 'FETCH_CONTACTS_FULFILLED': {
       return {
         ...state,
         contacts: action.payload.data,
         loading: false,
-        errors: {}
-      };
-    }
-
-    case 'FETCH_CONTACTS_PENDING': {
-      return {
-        ...state,
-        loading: true,
         errors: {}
       };
     }
@@ -32,7 +32,7 @@ export default (state = defaultState, action = {}) => {
       };
     }
 
-    case 'SAVE_CONTACT_PENDING': {
+    case 'SAVE_CONTACT': {
       return {
         ...state,
         loading: true
@@ -59,7 +59,7 @@ export default (state = defaultState, action = {}) => {
       };
     }
 
-    case 'FETCH_CONTACT_PENDING': {
+    case 'FETCH_CONTACT': {
       return {
         ...state,
         loading: true,
@@ -76,7 +76,7 @@ export default (state = defaultState, action = {}) => {
       };
     }
 
-    case 'UPDATE_CONTACT_PENDING': {
+    case 'UPDATE_CONTACT': {
       return {
         ...state,
         loading: true

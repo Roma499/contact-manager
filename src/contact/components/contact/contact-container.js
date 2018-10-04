@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { deleteContact, fetchContact } from '../../contact.actions';
+import { deleteContact, fetchContact } from '../../actions';
 import { contactPropType } from '../../contact.type';
 import Contact from './contact';
 
