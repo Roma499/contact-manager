@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import ContactFormField from './contact-form-field';
+import ContactFormField from './contactFormField/ContactFormField';
 import { validators, validateForm } from '../../../utils/validator';
 import { contactPropType } from '../../contact.type';
 

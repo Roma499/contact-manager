@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
-import ContactListItem from './contact-list-item';
+import ContactListItem from './ContactListItem';
 import { contactPropType } from '../../contact.type';
 
 const propTypes = {

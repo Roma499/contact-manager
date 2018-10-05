@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import './contact-list-item.css';
+import './ContactListItem.css';
 import { contactPropType } from '../../contact.type';
 
 const propTypes = {

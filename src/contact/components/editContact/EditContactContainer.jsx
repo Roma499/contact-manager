@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { deleteContact, fetchContact } from '../../actions';
+import { fetchContact, updateContact } from '../../actions';
+import ContactForm from '../contactForm/ContactForm';
 import { contactPropType } from '../../contact.type';
-import Contact from './contact';
 
 const propTypes = {
   contact: contactPropType,
   fetchContact: PropTypes.func.isRequired,
-  deleteContact: PropTypes.func.isRequired
+  updateContact: PropTypes.func.isRequired
 };
 
-class ContactContainer extends Component {
+class EditContactContainer extends Component {
   constructor(props) {
     super(props);
     const { id } = props.match.params;
@@ -22,7 +22,7 @@ class ContactContainer extends Component {
   render() {
     return (
       this.props.contact && (
-        <Contact contact={this.props.contact} deleteContact={this.props.deleteContact} />
+        <ContactForm contact={this.props.contact} onSubmit={this.props.updateContact} />
       )
     );
   }
@@ -34,9 +34,9 @@ function mapStateToProps(state) {
   };
 }
 
-ContactContainer.propTypes = propTypes;
+EditContactContainer.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
-  { fetchContact, deleteContact }
-)(ContactContainer);
+  { fetchContact, updateContact }
+)(EditContactContainer);

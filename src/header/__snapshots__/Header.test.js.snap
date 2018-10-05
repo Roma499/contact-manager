@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header
+  className="MuiPaper-root-9 MuiPaper-elevation4-15 MuiAppBar-root-1 MuiAppBar-positionStatic-5 MuiAppBar-colorPrimary-7"
+>
+  <div
+    className="MuiToolbar-root-36 MuiToolbar-regular-38 MuiToolbar-gutters-37"
+  >
+    <div
+      className="MuiGrid-container-40 MuiGrid-spacing-xs-16-63 MuiGrid-align-items-xs-center-48 MuiGrid-justify-xs-space-between-59"
+    >
+      <a
+        className="app-header-link"
+        href="/"
+        onClick={[Function]}
+      >
+        <h2
+          className="MuiTypography-root-137 MuiTypography-title-143 MuiTypography-colorInherit-156"
+        >
+          Contacts
+        </h2>
+      </a>
+      <a
+        className="app-header-link"
+        href="/contacts/new"
+        onClick={[Function]}
+      >
+        + Add Contact
+      </a>
+    </div>
+  </div>
+</header>
+`;

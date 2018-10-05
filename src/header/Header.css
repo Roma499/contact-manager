@@ -1,0 +1,11 @@
+.app-container {
+  width: 400px;
+  min-height: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.app-header-link {
+  color: #fff;
+  text-decoration: none;
+}
