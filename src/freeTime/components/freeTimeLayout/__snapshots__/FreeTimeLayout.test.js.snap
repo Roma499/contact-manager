@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render deal without errors renders correctly 1`] = `
+<div
+  className="free-time-layout"
+  onDragOver={[Function]}
+  onDrop={[Function]}
+/>
+`;

@@ -1,0 +1,8 @@
+.deal {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid rgb(22, 136, 170);
+  border-radius: 4px;
+  margin-left: 7px;
+  width: 40%;
+}

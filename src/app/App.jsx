@@ -4,6 +4,7 @@ import Header from '../header/Header';
 import ContactPage from '../contact/contact';
 import NoMatch from '../noMatch/NoMatch';
 import './App.css';
+import FreeTimePage from '../freeTime/components/freeTimePage/FreeTimePage';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Redirect to="/contacts" />
           </Route>
           <Route path="/contacts" component={ContactPage} />
+          <Route path="/free" component={FreeTimePage} />
           <Route component={NoMatch} />
         </Switch>
       </div>
