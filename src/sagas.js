@@ -1,7 +1,9 @@
-import * as contact from './contact/sagas';
+import contactSaga from './contact/sagas';
+import dealSaga from './freeTime/sagas';
 
 const sagas = {
-  ...contact
+  contactSaga,
+  dealSaga
 };
 
 export default function registerWithMiddleware(middleware) {

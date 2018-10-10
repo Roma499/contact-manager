@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { FormSection, Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -7,46 +9,25 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import TextField from '../../../shared/textField/TextField';
+import { saveDeal } from '../../actions';
+import NumberField from '../../../shared/numberField/NumberField';
 import { validators, validateForm } from '../../../utils/validator';
-import { contactPropType } from '../../contact.type';
+import styles from './DealForm.module.css';
 
 const messages = {
-  requaired: 'required',
-  phone: 'Invalid phone',
-  email: 'Invalid email'
+  requaired: 'required'
 };
 const fields = {
-  firstName: [
+  hours: [
     {
       validator: validators.requaired,
       message: messages.requaired
     }
   ],
-  lastName: [
+  minutes: [
     {
       validator: validators.requaired,
       message: messages.requaired
-    }
-  ],
-  phone: [
-    {
-      validator: validators.requaired,
-      message: messages.requaired
-    },
-    {
-      validator: validators.phone,
-      message: messages.phone
-    }
-  ],
-  email: [
-    {
-      validator: validators.requaired,
-      message: messages.requaired
-    },
-    {
-      validator: validators.email,
-      message: messages.email
     }
   ]
 };
@@ -54,13 +35,13 @@ const fields = {
 const validate = values => validateForm(fields, values);
 
 const propTypes = {
-  contact: contactPropType,
+  // contact: contactPropType,
   pristine: PropTypes.bool.isRequired,
-  submitting: PropTypes.bool.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  submitting: PropTypes.bool.isRequired
+  // handleSubmit: PropTypes.func.isRequired
 };
 
-class ContactForm extends Component {
+class DealForm extends Component {
   constructor(props) {
     super(props);
     if (props.contact) {
@@ -71,7 +52,10 @@ class ContactForm extends Component {
   render() {
     const { handleSubmit, pristine, submitting, contact } = this.props;
     return (
-      <Card className="contact-list-item">
+      <Card className={styles.container}>
+        <Link className={styles.closeBtn} to="/free">
+          Close
+        </Link>
         <CardContent>
           <Typography gutterBottom variant="headline" component="h3">
             {contact ? 'Edit Contact' : 'Add New Contact'}
@@ -79,11 +63,16 @@ class ContactForm extends Component {
         </CardContent>
         <form onSubmit={handleSubmit}>
           <CardContent>
-            <Field name="firstName" type="text" component={TextField} label="First Name" />
-            <Field name="lastName" type="text" component={TextField} label="Last Name" />
-
-            <Field name="phone" type="text" component={TextField} label="Phone" />
-            <Field name="email" type="text" component={TextField} label="Email" />
+            <h3>Start</h3>
+            <FormSection name="start">
+              <Field name="hours" type="number" component={NumberField} label="Hours" />
+              <Field name="minutes" type="number" component={NumberField} label="Minutes" />
+            </FormSection>
+            <h3>Finish</h3>
+            <FormSection name="finish">
+              <Field name="hours" type="number" component={NumberField} label="Hours" />
+              <Field name="minutes" type="number" component={NumberField} label="Minutes" />
+            </FormSection>
           </CardContent>
           <CardActions>
             <Button type="submit" disabled={pristine || submitting}>
@@ -96,6 +85,9 @@ class ContactForm extends Component {
   }
 }
 
-ContactForm.propTypes = propTypes;
+DealForm.propTypes = propTypes;
 
-export default reduxForm({ form: 'contact', validate })(ContactForm);
+export default connect(
+  null,
+  { onSubmit: saveDeal }
+)(reduxForm({ form: 'deal', validate })(DealForm));

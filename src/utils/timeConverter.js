@@ -8,6 +8,10 @@ export function msToTime(duration) {
   return hours + ':' + minutes;
 }
 
+export function timeToMs(hours, minutes) {
+  return hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+}
+
 export function timestampToPixels(timestamp, pixelsInMinute) {
   const minutes = Math.floor(timestamp / 1000 / 60);
   return Math.floor(minutes * pixelsInMinute);

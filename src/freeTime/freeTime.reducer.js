@@ -38,6 +38,13 @@ export default (state = defaultState, action = {}) => {
         deals: state.deals.map(item => (item.id === deal.id ? deal : item))
       };
     }
+    case 'SAVE_DEAL': {
+      const deal = action.payload.deal;
+      return {
+        ...state,
+        deals: [...state.deals, deal]
+      };
+    }
     default:
       return state;
   }

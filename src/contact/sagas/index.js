@@ -5,7 +5,7 @@ import saveContact from './saveContact/saveContact';
 import updateContact from './updateContact/updateContact';
 import deleteContact from './deleteContact/deleteContact';
 
-export function* mySaga() {
+export default function* contactSaga() {
   yield takeEvery('FETCH_CONTACT', fetchContact);
   yield takeEvery('FETCH_CONTACTS', fetchContacts);
   yield takeEvery('SAVE_CONTACT', saveContact);

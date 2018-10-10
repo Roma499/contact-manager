@@ -4,7 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 
-function ContactFormField({ input, label, type, meta: { touched, error } }) {
+function TextField({ input, label, type, meta: { touched, error } }) {
   return (
     <FormControl
       className="contact-form-field"
@@ -17,4 +17,4 @@ function ContactFormField({ input, label, type, meta: { touched, error } }) {
     </FormControl>
   );
 }
-export default ContactFormField;
+export default TextField;

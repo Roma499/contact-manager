@@ -49,7 +49,7 @@ export class FreeTimeLayout extends Component {
     this.props.updateDeal(this.draggedDeal);
   }
   componentDidMount() {
-    this.props.setLayoutConfig(this.layoutRef.current.clientHeight / MINUTES_IN_DAY);
+    this.props.setLayoutConfig(600 / MINUTES_IN_DAY);
   }
 }
 
