@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
+
 import { timestampToPixels, msToTime, pixelsToTimestamp } from '../../../utils/timeConverter';
 import './Deal.css';
 
@@ -10,6 +12,7 @@ export class Deal extends Component {
     super(props);
     this.onDragStart = this.onDragStart.bind(this);
     this.onDrag = this.onDrag.bind(this);
+    this.onDoubleClick = this.props.onDoubleClick.bind(this);
   }
 
   render() {
@@ -26,6 +29,7 @@ export class Deal extends Component {
         onDragStart={this.onDragStart}
         onDrag={this.onDrag}
         onDragOver={this.onDragOver}
+        onDoubleClick={this.onDoubleClick}
       >
         {msToTime(start)} - {msToTime(finish)}
       </div>
@@ -57,4 +61,12 @@ function mapStateToProps(state) {
     pixelsInMinute: state.freeTimeStore.layoutConfig.pixelsInMinute
   };
 }
-export default connect(mapStateToProps)(Deal);
+function mapDispatchToProps(dispatch, ownProps) {
+  return {
+    onDoubleClick: () => dispatch(push(`/free/${ownProps.id}`))
+  };
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Deal);

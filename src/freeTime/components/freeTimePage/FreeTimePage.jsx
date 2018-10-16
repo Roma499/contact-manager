@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './FreeTimePage.css';
 import FreeTimeLayout from '../freeTimeLayout/FreeTimeLayout';
 import TimeScale from '../timeScale/TimeScale';
@@ -16,7 +16,10 @@ class FreeTimePage extends Component {
             <TimeScale />
             <FreeTimeLayout />
           </div>
-          <Route path="/free/new" component={DealForm} />
+          <Switch>
+            <Route path="/free/new" component={DealForm} />
+            <Route path="/free/:id" component={DealForm} />
+          </Switch>
         </div>
       </>
     );

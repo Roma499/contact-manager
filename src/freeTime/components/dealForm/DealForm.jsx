@@ -41,16 +41,17 @@ const propTypes = {
   // handleSubmit: PropTypes.func.isRequired
 };
 
-class DealForm extends Component {
+export class DealForm extends Component {
   constructor(props) {
     super(props);
-    if (props.contact) {
-      props.initialize(props.contact);
+    if (props.deal) {
+      console.log(props.deal);
+      props.initialize(props.deal);
     }
   }
 
   render() {
-    const { handleSubmit, pristine, submitting, contact } = this.props;
+    const { handleSubmit, pristine, submitting, deal } = this.props;
     return (
       <Card className={styles.container}>
         <Link className={styles.closeBtn} to="/free">
@@ -58,7 +59,7 @@ class DealForm extends Component {
         </Link>
         <CardContent>
           <Typography gutterBottom variant="headline" component="h3">
-            {contact ? 'Edit Contact' : 'Add New Contact'}
+            {deal ? 'Edit Deal' : 'Add New Deal'}
           </Typography>
         </CardContent>
         <form onSubmit={handleSubmit}>
@@ -87,7 +88,15 @@ class DealForm extends Component {
 
 DealForm.propTypes = propTypes;
 
+function mapStateToProps(state, ownProps) {
+  if (ownProps.match.params.id) {
+    const deal = state.freeTimeStore.deals.find(item => item.id === ownProps.match.params.id);
+    debugger;
+    return { deal };
+  }
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { onSubmit: saveDeal }
 )(reduxForm({ form: 'deal', validate })(DealForm));

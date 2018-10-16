@@ -4,6 +4,7 @@ exports[`render deal without errors renders correctly 1`] = `
 <div
   className="deal"
   draggable={true}
+  onDoubleClick={[Function]}
   onDrag={[Function]}
   onDragOver={[Function]}
   onDragStart={[Function]}

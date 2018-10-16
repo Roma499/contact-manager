@@ -5,12 +5,12 @@ const defaultState = {
   },
   deals: [
     {
-      id: 1,
+      id: '1',
       start: 30600000,
       finish: 31300000
     },
     {
-      id: 2,
+      id: '2',
       start: 40600000,
       finish: 53300000
     }
