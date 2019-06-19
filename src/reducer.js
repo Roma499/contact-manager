@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import ContactReducer from './contact/contact.reducer';
 import FreeTimeReducer from './freeTime/freeTime.reducer';
 import { reducer as formReducer } from 'redux-form';
@@ -9,6 +10,8 @@ const reducers = {
   freeTimeStore: FreeTimeReducer
 };
 
-const rootReducer = combineReducers(reducers);
-
-export default rootReducer;
+export default history =>
+  combineReducers({
+    router: connectRouter(history),
+    ...reducers
+  });
