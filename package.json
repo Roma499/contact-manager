@@ -5,7 +5,7 @@
   "homepage": "https://roma499.github.io/contact-manager",
   "dependencies": {
     "@material-ui/core": "^4.1.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "connected-react-router": "^6.4.0",
     "form": "^0.2.4",
     "gh-pages": "^2.0.1",
